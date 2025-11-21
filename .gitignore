@@ -8,3 +8,6 @@
 # Node (if you add it later)
 node_modules/
 npm-debug.log
+
+# Documentation
+docs/
