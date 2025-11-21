@@ -62,8 +62,11 @@ class Board {
     }
 
     rotate(piece) {
-        // Clone with JSON for deep copy
-        let p = JSON.parse(JSON.stringify(piece));
+        // Clone piece and deep copy shape to avoid mutating original
+        let p = {
+            ...piece,
+            shape: piece.shape.map(row => [...row])
+        };
 
         // Transpose matrix
         for (let y = 0; y < p.shape.length; ++y) {
